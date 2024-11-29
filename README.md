@@ -19,6 +19,21 @@ duplication.)
 hatch run main:hatch-demo
 ```
 
+## Using with Docker
+
+You need to have docker running (E.g. docker desktop)
+
+Build the image:
+
+```
+$ hatch run docker:build-image
+```
+
+Run:
+```
+$ hatch run docker:run-image
+```
+
 ## Build a distribution
 
 The sdist and a pure-python wheel can be built with:

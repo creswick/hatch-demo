@@ -58,6 +58,10 @@ hatch-demo = "hatch_demo.main:run"
 [tool.hatch.envs.main]
 hatch-demo = "python -m hatch_demo.main:run"
 
+[tool.hatch.envs.docker.scripts]
+build-image = "docker buildx build -f Dockerfile -t hatch-demo ."
+run-image = "docker run hatch-demo"
+
 [tool.hatch.envs.lint]
 extra-dependencies = [
   "mypy>=1.0.0",
