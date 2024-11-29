@@ -5,6 +5,32 @@ It's based on `hatch`.
 
 # Development
 
+## Running the application
+
+There is a main entry point defined such that it will be available as
+a shell command once this package is installed. (`hatch-demo`)
+
+During development though, you can run the same thing via a duplicated
+implementation in the `main` environment.  (See
+https://github.com/pypa/hatch/issues/1632 for discussion about this
+duplication.)
+
+```
+hatch run main:hatch-demo
+```
+
+## Build a distribution
+
+The sdist and a pure-python wheel can be built with:
+
+```
+$ hatch build
+```
+
+The results will be put in `dist`
+
+## Testing and Linting
+
 Run all static checks:
 ```
 $ hatch run lint:all
@@ -26,6 +52,7 @@ $ hatch test --cover
 ```
 
 More details about hatch test can be found here: https://hatch.pypa.io/1.13/tutorials/testing/overview/#pyprojecttoml
+
 
 
 # Notes about hatch
