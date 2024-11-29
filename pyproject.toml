@@ -22,7 +22,7 @@ classifiers = [
 ]
 dependencies = [
   # Sample dependency, just for demonstration.
-  "numpy==2.1.3"
+  "numpy==2.1.3",
 ]
 
 [project.urls]
@@ -59,7 +59,7 @@ hatch-demo = "hatch_demo.main:run"
 hatch-demo = "python -m hatch_demo.main:run"
 
 [tool.hatch.envs.docker.scripts]
-build-image = "docker buildx build -f Dockerfile -t hatch-demo ."
+build-image = "docker buildx build --build-arg PKG_VER=`hatch version` -f Dockerfile -t hatch-demo ."
 run-image = "docker run hatch-demo"
 
 [tool.hatch.envs.lint]
